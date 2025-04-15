@@ -365,9 +365,9 @@ function Library:CrateWindow(p)
 			ImageLabel_3.Position = UDim2.new(0.782352924, 0, 0, 0)
 			ImageLabel_3.Size = UDim2.new(0.135294124, 0, 1, 0)
 			ImageLabel_3.Image = gl("mouse-pointer-click").Image
-			ImageLabel_2.ImageTransparency = 0
-			ImageLabel_2.ImageRectSize = gl("mouse-pointer-click").ImageRectSize
-			ImageLabel_2.ImageRectOffset = gl("mouse-pointer-click").ImageRectPosition
+			ImageLabel_3.ImageTransparency = 0
+			ImageLabel_3.ImageRectSize = gl("mouse-pointer-click").ImageRectSize
+			ImageLabel_3.ImageRectOffset = gl("mouse-pointer-click").ImageRectPosition
 
 			UICorner_6.CornerRadius = UDim.new(0.200000003, 0)
 			UICorner_6.Parent = ButtonFrame
@@ -463,5 +463,3 @@ function Library:CrateWindow(p)
 end
 
 return Library
-
---------------------------------
