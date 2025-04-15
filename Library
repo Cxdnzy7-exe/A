@@ -207,7 +207,6 @@ function Library:CrateWindow(p)
 		local Title = p.Title or "nill"
 		local Icon = p.Icon or "house"
 		
-		
 		local TabsContainer = Instance.new("Frame")
 		local UICorner_4 = Instance.new("UICorner")
 		local ScrollingFrame = Instance.new("ScrollingFrame")
@@ -461,7 +460,7 @@ function Library:CrateWindow(p)
 		return Func
 	end
 
-	
+	return Tabs
 end
 
 return Library
