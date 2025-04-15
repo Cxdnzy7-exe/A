@@ -99,14 +99,14 @@ function Library:CrateWindow(p)
 	Header.Position = UDim2.new(-3.1076965e-08, 0, 0, 0)
 	Header.Size = UDim2.new(1.00000012, 0, 0.122857146, 0)
 
-	Line.Name = "Line"
+	--[[Line.Name = "Line"
 	Line.Parent = Header
 	Line.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	Line.BackgroundTransparency = 0.650
 	Line.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Line.BorderSizePixel = 0
 	Line.Position = UDim2.new(3.10769614e-08, 0, 1.00000012, 0)
-	Line.Size = UDim2.new(1, 0, 0.1, 0)
+	Line.Size = UDim2.new(1, 0, 0.1, 0)]]
 
 	RightContainer.Name = "RightContainer"
 	RightContainer.Parent = Header
