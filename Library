@@ -317,6 +317,7 @@ function Library:CrateWindow(p)
 			local UIStroke = Instance.new("UIStroke")
 			
 			UIStroke.Parent = ButtonFrame
+			UIStroke.Thickness = 1
 			
 			ScrollingFrame_2.Parent = InTabContainer
 			ScrollingFrame_2.Active = true
