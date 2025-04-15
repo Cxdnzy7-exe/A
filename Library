@@ -57,7 +57,7 @@ function Library:CrateWindow(p)
 
 	local Main = Instance.new("Frame")
 	local Header = Instance.new("Frame")
-	local Line = Instance.new("Frame")
+	--local Line = Instance.new("Frame")
 	local RightContainer = Instance.new("Frame")
 	local ImageButton = Instance.new("ImageButton")
 	local LeftContainer = Instance.new("Frame")
