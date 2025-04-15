@@ -342,7 +342,7 @@ function Library:CrateWindow(p)
 			ButtonFrame.Position = UDim2.new(0.0367647074, 0, 0.115582973, 0)
 			ButtonFrame.Size = UDim2.new(0.9, 0, 0.05, 0, 0)
 
-			ButtonTitle.Name = "ButtonTitle"
+			ButtonTitle.Name = Title
 			ButtonTitle.Parent = ButtonFrame
 			ButtonTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			ButtonTitle.BackgroundTransparency = 1.000
@@ -406,7 +406,7 @@ function Library:CrateWindow(p)
 			ToggleTitle.Position = UDim2.new(0.0500000007, 0, 0, 0)
 			ToggleTitle.Size = UDim2.new(0.632352948, 0, 1, 0)
 			ToggleTitle.Font = Enum.Font.SourceSans
-			ToggleTitle.Text = "Automatic Farm"
+			ToggleTitle.Text = Title
 			ToggleTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 			ToggleTitle.TextSize = 20.000
 			ToggleTitle.TextWrapped = true
@@ -425,8 +425,8 @@ function Library:CrateWindow(p)
 			BG.BackgroundColor3 = Color3.fromRGB(62, 62, 62)
 			BG.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			BG.BorderSizePixel = 0
-			BG.Position = UDim2.new(0.268518269, 0, 0.190352678, 0)
-			BG.Size = UDim2.new(0.509259284, 0, 0.565313339, 0)
+			BG.Position = UDim2.new(0.269, 0, 0.19, 0)
+			BG.Size = UDim2.new(0.509, 0, 0, 0.565, 0)
 
 			UICorner_7.CornerRadius = UDim.new(1, 0)
 			UICorner_7.Parent = BG
@@ -436,8 +436,8 @@ function Library:CrateWindow(p)
 			Button_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Button_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Button_2.BorderSizePixel = 0
-			Button_2.Position = UDim2.new(0.264403403, 0, 0.163362116, 0)
-			Button_2.Size = UDim2.new(0.25, 0, 0.646817327, 0)
+			Button_2.Position = UDim2.new(0.264, 0, 0.163, 0)
+			Button_2.Size = UDim2.new(0.25, 0, 0.647, 0)
 
 			UICorner_8.CornerRadius = UDim.new(1, 0)
 			UICorner_8.Parent = Button_2
@@ -463,6 +463,3 @@ function Library:CrateWindow(p)
 end
 
 return Library
-
-
--------------------------------------------
