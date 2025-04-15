@@ -5,6 +5,9 @@ ScreenGui.Name = "Libraryyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
 ScreenGui.Parent = not game:GetService("RunService"):IsStudio() and game:GetService("CoreGui") or game:GetService("Players").LocalPlayer.PlayerGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
+
+
+
 local IconList = loadstring(game:HttpGet('https://raw.githubusercontent.com/Dummyrme/Library/refs/heads/main/Icon.lua'))()
 function gl(i)
 	local iconData = IconList.Icons[i]
@@ -42,6 +45,15 @@ function Library:CrateWindow(p)
 	local Title = p.Title or "Null"
 	local Desc = p.Desc or ""
 	
+	local Tabs = {
+		Value = false,
+		List = {},
+		DefaultIndex = 1
+	}
+
+	function Tabs:SelectTab(p)
+		Tabs.DefaultIndex = p or 1
+	end
 
 	local Main = Instance.new("Frame")
 	local Header = Instance.new("Frame")
@@ -57,31 +69,13 @@ function Library:CrateWindow(p)
 	local DecsTitle = Instance.new("TextLabel")
 	local UICorner_3 = Instance.new("UICorner")
 	local Container = Instance.new("Frame")
-	local TabsContainer = Instance.new("Frame")
-	local UICorner_4 = Instance.new("UICorner")
-	local ScrollingFrame = Instance.new("ScrollingFrame")
-	local UIListLayout = Instance.new("UIListLayout")
-	local TabFrame = Instance.new("Frame")
-	local TabTitle = Instance.new("TextLabel")
-	local ImageLabel_2 = Instance.new("ImageLabel")
-	local Button = Instance.new("TextButton")
+	
 	local InTabContainer = Instance.new("Frame")
 	local UICorner_5 = Instance.new("UICorner")
 	local ScrollingFrame_2 = Instance.new("ScrollingFrame")
-	local UIListLayout_2 = Instance.new("UIListLayout")
-	local ButtonFrame = Instance.new("Frame")
-	local ButtonTitle = Instance.new("TextLabel")
-	local ImageLabel_3 = Instance.new("ImageLabel")
-	local TextButton = Instance.new("TextButton")
-	local UICorner_6 = Instance.new("UICorner")
-	local ToggleFrame = Instance.new("Frame")
-	local ToggleTitle = Instance.new("TextLabel")
-	local Frame = Instance.new("Frame")
-	local BG = Instance.new("Frame")
-	local UICorner_7 = Instance.new("UICorner")
-	local Button_2 = Instance.new("Frame")
-	local UICorner_8 = Instance.new("UICorner")
-	local Button_3 = Instance.new("TextButton")
+	
+	
+	
 
 	--Properties:
 
@@ -203,217 +197,271 @@ function Library:CrateWindow(p)
 	Container.Position = UDim2.new(0, 0, 0.165714279, 0)
 	Container.Size = UDim2.new(1, 0, 0.834285736, 0)
 
-	TabsContainer.Name = "TabsContainer"
-	TabsContainer.Parent = Container
-	TabsContainer.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
-	TabsContainer.BackgroundTransparency = 0.300
-	TabsContainer.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	TabsContainer.BorderSizePixel = 0
-	TabsContainer.Position = UDim2.new(0, 0, -0.0205479451, 0)
-	TabsContainer.Size = UDim2.new(0.2668024, 0, 0.976027369, 0)
+	
 
-	UICorner_4.CornerRadius = UDim.new(0.100000001, 0)
-	UICorner_4.Parent = TabsContainer
+	
 
-	ScrollingFrame.Parent = TabsContainer
-	ScrollingFrame.Active = true
-	ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ScrollingFrame.BackgroundTransparency = 1.000
-	ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	ScrollingFrame.BorderSizePixel = 0
-	ScrollingFrame.Size = UDim2.new(1, 0, 1, 0)
+	
 
-	UIListLayout.Parent = ScrollingFrame
-	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-	UIListLayout.Padding = UDim.new(0.00999999978, 0)
+	function Tabs:CreateTab(p)
+		local Title = p.Title or "nill"
+		local Icon = p.Icon or "house"
+		
+		
+		local TabsContainer = Instance.new("Frame")
+		local UICorner_4 = Instance.new("UICorner")
+		local ScrollingFrame = Instance.new("ScrollingFrame")
+		local UIListLayout = Instance.new("UIListLayout")
+		local TabFrame = Instance.new("Frame")
+		local TabTitle = Instance.new("TextLabel")
+		local ImageLabel_2 = Instance.new("ImageLabel")
+		local Button = Instance.new("TextButton")
+		
+		TabsContainer.Name = "TabsContainer"
+		TabsContainer.Parent = Container
+		TabsContainer.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+		TabsContainer.BackgroundTransparency = 0.300
+		TabsContainer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		TabsContainer.BorderSizePixel = 0
+		TabsContainer.Position = UDim2.new(0, 0, -0.0205479451, 0)
+		TabsContainer.Size = UDim2.new(0.2668024, 0, 0.976027369, 0)
 
-	TabFrame.Name = "TabFrame"
-	TabFrame.Parent = ScrollingFrame
-	TabFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TabFrame.BackgroundTransparency = 1.000
-	TabFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	TabFrame.BorderSizePixel = 0
-	TabFrame.Size = UDim2.new(1, 0, 0.067482397, 0)
+		UICorner_4.CornerRadius = UDim.new(0.100000001, 0)
+		UICorner_4.Parent = TabsContainer
 
-	TabTitle.Name = "TabTitle"
-	TabTitle.Parent = TabFrame
-	TabTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TabTitle.BackgroundTransparency = 1.000
-	TabTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	TabTitle.BorderSizePixel = 0
-	TabTitle.Position = UDim2.new(0.412213713, 0, 0, 0)
-	TabTitle.Size = UDim2.new(0.587786317, 0, 1, 0)
-	TabTitle.Font = Enum.Font.Highway
-	TabTitle.Text = "Main"
-	TabTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-	TabTitle.TextSize = 14.000
-	TabTitle.TextWrapped = true
-	TabTitle.TextXAlignment = Enum.TextXAlignment.Left
+		ScrollingFrame.Parent = TabsContainer
+		ScrollingFrame.Active = true
+		ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ScrollingFrame.BackgroundTransparency = 1.000
+		ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		ScrollingFrame.BorderSizePixel = 0
+		ScrollingFrame.Size = UDim2.new(1, 0, 1, 0)
 
-	ImageLabel_2.Parent = TabFrame
-	ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ImageLabel_2.BackgroundTransparency = 1.000
-	ImageLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	ImageLabel_2.BorderSizePixel = 0
-	ImageLabel_2.Position = UDim2.new(2.32958669e-07, 0, 0, 0)
-	ImageLabel_2.Size = UDim2.new(0.33831805, 0, 1, 0)
-	ImageLabel_2.Image = "rbxassetid://102331017367323"
+		UIListLayout.Parent = ScrollingFrame
+		UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+		UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+		UIListLayout.Padding = UDim.new(0.00999999978, 0)
 
-	Button.Name = "Button"
-	Button.Parent = TabFrame
-	Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Button.BackgroundTransparency = 1.000
-	Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Button.BorderSizePixel = 0
-	Button.Size = UDim2.new(1, 0, 1, 0)
-	Button.ZIndex = 2
-	Button.Font = Enum.Font.SourceSans
-	Button.Text = ""
-	Button.TextColor3 = Color3.fromRGB(0, 0, 0)
-	Button.TextSize = 14.000
+		TabFrame.Name = "TabFrame"
+		TabFrame.Parent = ScrollingFrame
+		TabFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TabFrame.BackgroundTransparency = 1.000
+		TabFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		TabFrame.BorderSizePixel = 0
+		TabFrame.Size = UDim2.new(1, 0, 0.067482397, 0)
 
-	InTabContainer.Name = "InTabContainer"
-	InTabContainer.Parent = Container
-	InTabContainer.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
-	InTabContainer.BackgroundTransparency = 0.300
-	InTabContainer.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	InTabContainer.BorderSizePixel = 0
-	InTabContainer.Position = UDim2.new(0.293279022, 0, -0.0205479451, 0)
-	InTabContainer.Size = UDim2.new(0.692464411, 0, 0.976027369, 0)
+		TabTitle.Name = "TabTitle"
+		TabTitle.Parent = TabFrame
+		TabTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TabTitle.BackgroundTransparency = 1.000
+		TabTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		TabTitle.BorderSizePixel = 0
+		TabTitle.Position = UDim2.new(0.412213713, 0, 0, 0)
+		TabTitle.Size = UDim2.new(0.587786317, 0, 1, 0)
+		TabTitle.Font = Enum.Font.Highway
+		TabTitle.Text = Title
+		TabTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TabTitle.TextSize = 14.000
+		TabTitle.TextWrapped = true
+		TabTitle.TextXAlignment = Enum.TextXAlignment.Left
 
-	UICorner_5.CornerRadius = UDim.new(0.0500000007, 0)
-	UICorner_5.Parent = InTabContainer
+		ImageLabel_2.Parent = TabFrame
+		ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ImageLabel_2.BackgroundTransparency = 1.000
+		ImageLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		ImageLabel_2.BorderSizePixel = 0
+		ImageLabel_2.Position = UDim2.new(2.32958669e-07, 0, 0, 0)
+		ImageLabel_2.Size = UDim2.new(0.33831805, 0, 1, 0)
+		ImageLabel_2.Image = gl(Icon).Image
+		ImageLabel_2.ImageTransparency = 0.7
+		ImageLabel_2.ImageRectSize = gl(Icon).ImageRectSize
+		ImageLabel_2.ImageRectOffset = gl(Icon).ImageRectPosition
 
-	ScrollingFrame_2.Parent = InTabContainer
-	ScrollingFrame_2.Active = true
-	ScrollingFrame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ScrollingFrame_2.BackgroundTransparency = 1.000
-	ScrollingFrame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	ScrollingFrame_2.BorderSizePixel = 0
-	ScrollingFrame_2.Position = UDim2.new(0, 0, 0.028070176, 0)
-	ScrollingFrame_2.Size = UDim2.new(1, 0, 0.971929848, 0)
-	ScrollingFrame_2.CanvasPosition = Vector2.new(0, 4)
+		Button.Name = "Button"
+		Button.Parent = TabFrame
+		Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Button.BackgroundTransparency = 1.000
+		Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		Button.BorderSizePixel = 0
+		Button.Size = UDim2.new(1, 0, 1, 0)
+		Button.ZIndex = 2
+		Button.Font = Enum.Font.SourceSans
+		Button.Text = ""
+		Button.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Button.TextSize = 14.000
+		
+		
+		
+		local Func = {}
+		
+		
+		function Func:CreateButton(p)
+			
+			local UIListLayout_2 = Instance.new("UIListLayout")
+			local ButtonFrame = Instance.new("Frame")
+			local ButtonTitle = Instance.new("TextLabel")
+			local ImageLabel_3 = Instance.new("ImageLabel")
+			local TextButton = Instance.new("TextButton")
+			local UICorner_6 = Instance.new("UICorner")
+			local UIStroke = Instance.new("UIStroke")
+			
+			InTabContainer.Name = "InTabContainer"
+			InTabContainer.Parent = Container
+			InTabContainer.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+			InTabContainer.BackgroundTransparency = 0.300
+			InTabContainer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			InTabContainer.BorderSizePixel = 0
+			InTabContainer.Position = UDim2.new(0.293279022, 0, -0.0205479451, 0)
+			InTabContainer.Size = UDim2.new(0.692464411, 0, 0.976027369, 0)
 
-	UIListLayout_2.Parent = ScrollingFrame_2
-	UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
-	UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
-	UIListLayout_2.Padding = UDim.new(0.00999999978, 0)
+			UICorner_5.CornerRadius = UDim.new(0.0500000007, 0)
+			UICorner_5.Parent = InTabContainer
 
-	ButtonFrame.Name = "ButtonFrame"
-	ButtonFrame.Parent = ScrollingFrame_2
-	ButtonFrame.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-	ButtonFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	ButtonFrame.BorderSizePixel = 0
-	ButtonFrame.Position = UDim2.new(0.0367647074, 0, 0.115582973, 0)
-	ButtonFrame.Size = UDim2.new(0.899999976, 0, 0.0649999976, 0)
+			ScrollingFrame_2.Parent = InTabContainer
+			ScrollingFrame_2.Active = true
+			ScrollingFrame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			ScrollingFrame_2.BackgroundTransparency = 1.000
+			ScrollingFrame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			ScrollingFrame_2.BorderSizePixel = 0
+			ScrollingFrame_2.Position = UDim2.new(0, 0, 0.028070176, 0)
+			ScrollingFrame_2.Size = UDim2.new(1, 0, 0.971929848, 0)
+			ScrollingFrame_2.CanvasPosition = Vector2.new(0, 4)
 
-	ButtonTitle.Name = "ButtonTitle"
-	ButtonTitle.Parent = ButtonFrame
-	ButtonTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ButtonTitle.BackgroundTransparency = 1.000
-	ButtonTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	ButtonTitle.BorderSizePixel = 0
-	ButtonTitle.Position = UDim2.new(0.0500000007, 0, 0, 0)
-	ButtonTitle.Size = UDim2.new(0.632352948, 0, 1, 0)
-	ButtonTitle.Font = Enum.Font.SourceSans
-	ButtonTitle.Text = "Teleport"
-	ButtonTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-	ButtonTitle.TextSize = 20.000
-	ButtonTitle.TextWrapped = true
-	ButtonTitle.TextXAlignment = Enum.TextXAlignment.Left
+			UIListLayout_2.Parent = ScrollingFrame_2
+			UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+			UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+			UIListLayout_2.Padding = UDim.new(0.00999999978, 0)
 
-	ImageLabel_3.Parent = ButtonFrame
-	ImageLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ImageLabel_3.BackgroundTransparency = 1.000
-	ImageLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	ImageLabel_3.BorderSizePixel = 0
-	ImageLabel_3.Position = UDim2.new(0.782352924, 0, 0, 0)
-	ImageLabel_3.Size = UDim2.new(0.135294124, 0, 1, 0)
-	ImageLabel_3.Image = "rbxassetid://90238093188663"
+			ButtonFrame.Name = "ButtonFrame"
+			ButtonFrame.Parent = ScrollingFrame_2
+			ButtonFrame.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+			ButtonFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			ButtonFrame.BorderSizePixel = 0
+			ButtonFrame.Position = UDim2.new(0.0367647074, 0, 0.115582973, 0)
+			ButtonFrame.Size = UDim2.new(0.899999976, 0, 0.0649999976, 0)
 
-	TextButton.Parent = ButtonFrame
-	TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TextButton.BackgroundTransparency = 1.000
-	TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	TextButton.BorderSizePixel = 0
-	TextButton.Size = UDim2.new(1, 0, 1, 0)
-	TextButton.ZIndex = 2
-	TextButton.Font = Enum.Font.SourceSans
-	TextButton.Text = ""
-	TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-	TextButton.TextSize = 14.000
+			ButtonTitle.Name = "ButtonTitle"
+			ButtonTitle.Parent = ButtonFrame
+			ButtonTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			ButtonTitle.BackgroundTransparency = 1.000
+			ButtonTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			ButtonTitle.BorderSizePixel = 0
+			ButtonTitle.Position = UDim2.new(0.0500000007, 0, 0, 0)
+			ButtonTitle.Size = UDim2.new(0.632352948, 0, 1, 0)
+			ButtonTitle.Font = Enum.Font.SourceSans
+			ButtonTitle.Text = "Teleport"
+			ButtonTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+			ButtonTitle.TextSize = 20.000
+			ButtonTitle.TextWrapped = true
+			ButtonTitle.TextXAlignment = Enum.TextXAlignment.Left
 
-	UICorner_6.CornerRadius = UDim.new(0.200000003, 0)
-	UICorner_6.Parent = ButtonFrame
+			ImageLabel_3.Parent = ButtonFrame
+			ImageLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			ImageLabel_3.BackgroundTransparency = 1.000
+			ImageLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			ImageLabel_3.BorderSizePixel = 0
+			ImageLabel_3.Position = UDim2.new(0.782352924, 0, 0, 0)
+			ImageLabel_3.Size = UDim2.new(0.135294124, 0, 1, 0)
+			ImageLabel_3.Image = "rbxassetid://90238093188663"
 
-	ToggleFrame.Name = "ToggleFrame"
-	ToggleFrame.Parent = ScrollingFrame_2
-	ToggleFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ToggleFrame.BackgroundTransparency = 1.000
-	ToggleFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	ToggleFrame.BorderSizePixel = 0
-	ToggleFrame.Position = UDim2.new(0.00808818452, 0, 0.064809002, 0)
-	ToggleFrame.Size = UDim2.new(0.899999976, 0, 0.0649999976, 0)
+			TextButton.Parent = ButtonFrame
+			TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			TextButton.BackgroundTransparency = 1.000
+			TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			TextButton.BorderSizePixel = 0
+			TextButton.Size = UDim2.new(1, 0, 1, 0)
+			TextButton.ZIndex = 2
+			TextButton.Font = Enum.Font.SourceSans
+			TextButton.Text = ""
+			TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+			TextButton.TextSize = 14.000
 
-	ToggleTitle.Name = "ToggleTitle"
-	ToggleTitle.Parent = ToggleFrame
-	ToggleTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ToggleTitle.BackgroundTransparency = 1.000
-	ToggleTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	ToggleTitle.BorderSizePixel = 0
-	ToggleTitle.Position = UDim2.new(0.0500000007, 0, 0, 0)
-	ToggleTitle.Size = UDim2.new(0.632352948, 0, 1, 0)
-	ToggleTitle.Font = Enum.Font.SourceSans
-	ToggleTitle.Text = "Automatic Farm"
-	ToggleTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-	ToggleTitle.TextSize = 20.000
-	ToggleTitle.TextWrapped = true
-	ToggleTitle.TextXAlignment = Enum.TextXAlignment.Left
+			UICorner_6.CornerRadius = UDim.new(0.200000003, 0)
+			UICorner_6.Parent = ButtonFrame
+		end
+		
+		function Func:CreateToggle(p)
+			local ToggleFrame = Instance.new("Frame")
+			local ToggleTitle = Instance.new("TextLabel")
+			local Frame = Instance.new("Frame")
+			local BG = Instance.new("Frame")
+			local UICorner_7 = Instance.new("UICorner")
+			local Button_2 = Instance.new("Frame")
+			local UICorner_8 = Instance.new("UICorner")
+			local Button_3 = Instance.new("TextButton")
+			
+			ToggleFrame.Name = "ToggleFrame"
+			ToggleFrame.Parent = ScrollingFrame_2
+			ToggleFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			ToggleFrame.BackgroundTransparency = 1.000
+			ToggleFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			ToggleFrame.BorderSizePixel = 0
+			ToggleFrame.Position = UDim2.new(0.00808818452, 0, 0.064809002, 0)
+			ToggleFrame.Size = UDim2.new(0.899999976, 0, 0.0649999976, 0)
 
-	Frame.Parent = ToggleFrame
-	Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Frame.BackgroundTransparency = 1.000
-	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Frame.BorderSizePixel = 0
-	Frame.Position = UDim2.new(0.68235296, 0, 0, 0)
-	Frame.Size = UDim2.new(0.31764707, 0, 1, 0)
+			ToggleTitle.Name = "ToggleTitle"
+			ToggleTitle.Parent = ToggleFrame
+			ToggleTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			ToggleTitle.BackgroundTransparency = 1.000
+			ToggleTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			ToggleTitle.BorderSizePixel = 0
+			ToggleTitle.Position = UDim2.new(0.0500000007, 0, 0, 0)
+			ToggleTitle.Size = UDim2.new(0.632352948, 0, 1, 0)
+			ToggleTitle.Font = Enum.Font.SourceSans
+			ToggleTitle.Text = "Automatic Farm"
+			ToggleTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+			ToggleTitle.TextSize = 20.000
+			ToggleTitle.TextWrapped = true
+			ToggleTitle.TextXAlignment = Enum.TextXAlignment.Left
 
-	BG.Name = "BG"
-	BG.Parent = Frame
-	BG.BackgroundColor3 = Color3.fromRGB(62, 62, 62)
-	BG.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	BG.BorderSizePixel = 0
-	BG.Position = UDim2.new(0.268518269, 0, 0.190352678, 0)
-	BG.Size = UDim2.new(0.509259284, 0, 0.565313339, 0)
+			Frame.Parent = ToggleFrame
+			Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Frame.BackgroundTransparency = 1.000
+			Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Frame.BorderSizePixel = 0
+			Frame.Position = UDim2.new(0.68235296, 0, 0, 0)
+			Frame.Size = UDim2.new(0.31764707, 0, 1, 0)
 
-	UICorner_7.CornerRadius = UDim.new(1, 0)
-	UICorner_7.Parent = BG
+			BG.Name = "BG"
+			BG.Parent = Frame
+			BG.BackgroundColor3 = Color3.fromRGB(62, 62, 62)
+			BG.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			BG.BorderSizePixel = 0
+			BG.Position = UDim2.new(0.268518269, 0, 0.190352678, 0)
+			BG.Size = UDim2.new(0.509259284, 0, 0.565313339, 0)
 
-	Button_2.Name = "Button"
-	Button_2.Parent = Frame
-	Button_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Button_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Button_2.BorderSizePixel = 0
-	Button_2.Position = UDim2.new(0.264403403, 0, 0.163362116, 0)
-	Button_2.Size = UDim2.new(0.25, 0, 0.646817327, 0)
+			UICorner_7.CornerRadius = UDim.new(1, 0)
+			UICorner_7.Parent = BG
 
-	UICorner_8.CornerRadius = UDim.new(1, 0)
-	UICorner_8.Parent = Button_2
+			Button_2.Name = "Button"
+			Button_2.Parent = Frame
+			Button_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Button_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Button_2.BorderSizePixel = 0
+			Button_2.Position = UDim2.new(0.264403403, 0, 0.163362116, 0)
+			Button_2.Size = UDim2.new(0.25, 0, 0.646817327, 0)
 
-	Button_3.Name = "Button"
-	Button_3.Parent = ToggleFrame
-	Button_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Button_3.BackgroundTransparency = 1.000
-	Button_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Button_3.BorderSizePixel = 0
-	Button_3.Size = UDim2.new(1, 0, 1, 0)
-	Button_3.ZIndex = 2
-	Button_3.Font = Enum.Font.SourceSans
-	Button_3.Text = ""
-	Button_3.TextColor3 = Color3.fromRGB(0, 0, 0)
-	Button_3.TextSize = 14.000
+			UICorner_8.CornerRadius = UDim.new(1, 0)
+			UICorner_8.Parent = Button_2
 
+			Button_3.Name = "Button"
+			Button_3.Parent = ToggleFrame
+			Button_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Button_3.BackgroundTransparency = 1.000
+			Button_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Button_3.BorderSizePixel = 0
+			Button_3.Size = UDim2.new(1, 0, 1, 0)
+			Button_3.ZIndex = 2
+			Button_3.Font = Enum.Font.SourceSans
+			Button_3.Text = ""
+			Button_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+			Button_3.TextSize = 14.000
+		end
+		
+		return Func
+	end
+
+	
 end
 
 return Library
