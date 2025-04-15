@@ -239,6 +239,7 @@ function Library:CrateWindow(p)
 		ScrollingFrame.BackgroundTransparency = 1.000
 		ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		ScrollingFrame.BorderSizePixel = 0
+		ScrollingFrame.ScrollBarImageTransparency = 1
 		ScrollingFrame.Size = UDim2.new(1, 0, 1, 0)
 
 		UIListLayout.Parent = ScrollingFrame
@@ -329,6 +330,7 @@ function Library:CrateWindow(p)
 			ScrollingFrame_2.BorderSizePixel = 0
 			ScrollingFrame_2.Position = UDim2.new(0, 0, 0.028070176, 0)
 			ScrollingFrame_2.Size = UDim2.new(1, 0, 0.971929848, 0)
+			ScrollingFrame_2.ScrollBarImageTransparency = 1
 			ScrollingFrame_2.CanvasPosition = Vector2.new(0, 4)
 
 			UIListLayout_2.Parent = ScrollingFrame_2
@@ -469,3 +471,5 @@ function Library:CrateWindow(p)
 end
 
 return Library
+
+--Update
