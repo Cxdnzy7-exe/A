@@ -44,6 +44,7 @@ function Library:CrateWindow(p)
 	local Logo = p.Logo or nil
 	local Title = p.Title or "Null"
 	local Desc = p.Desc or ""
+	local Size = p.Size or UDim2.new(0, 530,0, 400)
 	
 	local Tabs = {
 		Value = false,
@@ -87,7 +88,7 @@ function Library:CrateWindow(p)
 	Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Main.BorderSizePixel = 0
 	Main.Position = UDim2.new(0.499401271, 0, 0.5, 0)
-	Main.Size = UDim2.new(0.588023901, 0, 0.680933833, 0)
+	Main.Size = Size
 	Main.ZIndex = 2
 
 	Header.Name = "Header"
@@ -251,7 +252,7 @@ function Library:CrateWindow(p)
 		TabFrame.BackgroundTransparency = 1.000
 		TabFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		TabFrame.BorderSizePixel = 0
-		TabFrame.Size = UDim2.new(1, 0, 0.067482397, 0)
+		TabFrame.Size = UDim2.new(1, 0, 0.05, 0)
 
 		TabTitle.Name = "TabTitle"
 		TabTitle.Parent = TabFrame
@@ -341,7 +342,7 @@ function Library:CrateWindow(p)
 			ButtonFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			ButtonFrame.BorderSizePixel = 0
 			ButtonFrame.Position = UDim2.new(0.0367647074, 0, 0.115582973, 0)
-			ButtonFrame.Size = UDim2.new(0.899999976, 0, 0.0649999976, 0)
+			ButtonFrame.Size = UDim2.new(0.9, 0, 0.05, 0, 0)
 
 			ButtonTitle.Name = "ButtonTitle"
 			ButtonTitle.Parent = ButtonFrame
@@ -400,7 +401,7 @@ function Library:CrateWindow(p)
 			ToggleFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			ToggleFrame.BorderSizePixel = 0
 			ToggleFrame.Position = UDim2.new(0.00808818452, 0, 0.064809002, 0)
-			ToggleFrame.Size = UDim2.new(0.899999976, 0, 0.0649999976, 0)
+			ToggleFrame.Size = UDim2.new(0.9, 0, 0, 0.05, 0, 0)
 
 			ToggleTitle.Name = "ToggleTitle"
 			ToggleTitle.Parent = ToggleFrame
@@ -468,5 +469,3 @@ function Library:CrateWindow(p)
 end
 
 return Library
-
---Up
