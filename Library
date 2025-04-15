@@ -124,7 +124,11 @@ function Library:CrateWindow(p)
 	ImageButton.BorderSizePixel = 0
 	ImageButton.Position = UDim2.new(0.760030985, 0, 0.124741413, 0)
 	ImageButton.Size = UDim2.new(0.171547979, 0, 0.763361812, 0)
-	ImageButton.Image = "http://www.roblox.com/asset/?id=10152135063"
+	ImageButton.Image = gl("x").Image
+	ImageButton.ImageTransparency = 0
+	ImageButton.ImageRectSize = gl("x").ImageRectSize
+	ImageButton.ImageRectOffset = gl("x").ImageRectPosition
+
 
 	LeftContainer.Name = "LeftContainer"
 	LeftContainer.Parent = Header
@@ -272,7 +276,7 @@ function Library:CrateWindow(p)
 		ImageLabel_2.Position = UDim2.new(2.32958669e-07, 0, 0, 0)
 		ImageLabel_2.Size = UDim2.new(0.33831805, 0, 1, 0)
 		ImageLabel_2.Image = gl(Icon).Image
-		ImageLabel_2.ImageTransparency = 0.7
+		ImageLabel_2.ImageTransparency = 0
 		ImageLabel_2.ImageRectSize = gl(Icon).ImageRectSize
 		ImageLabel_2.ImageRectOffset = gl(Icon).ImageRectPosition
 
@@ -464,3 +468,5 @@ function Library:CrateWindow(p)
 end
 
 return Library
+
+--Up
