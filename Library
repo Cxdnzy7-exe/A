@@ -75,7 +75,6 @@ function Library:CrateWindow(p)
 
 	local Main = Instance.new("Frame")
 	local Header = Instance.new("Frame")
-	--local Line = Instance.new("Frame")
 	local RightContainer = Instance.new("Frame")
 	local ImageButton = Instance.new("ImageButton")
 	local LeftContainer = Instance.new("Frame")
@@ -116,15 +115,6 @@ function Library:CrateWindow(p)
 	Header.BorderSizePixel = 0
 	Header.Position = UDim2.new(-3.1076965e-08, 0, 0, 0)
 	Header.Size = UDim2.new(1.00000012, 0, 0.122857146, 0)
-
-	--[[Line.Name = "Line"
-	Line.Parent = Header
-	Line.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Line.BackgroundTransparency = 0.650
-	Line.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Line.BorderSizePixel = 0
-	Line.Position = UDim2.new(3.10769614e-08, 0, 1.00000012, 0)
-	Line.Size = UDim2.new(1, 0, 0.1, 0)]]
 
 	RightContainer.Name = "RightContainer"
 	RightContainer.Parent = Header
@@ -220,9 +210,17 @@ function Library:CrateWindow(p)
 	Container.Size = UDim2.new(1, 0, 0.834285736, 0)
 
 	
-
+	InTabContainer.Name = "InTabContainer"
+	InTabContainer.Parent = Container
+	InTabContainer.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+	InTabContainer.BackgroundTransparency = 0.300
+	InTabContainer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	InTabContainer.BorderSizePixel = 0
+	InTabContainer.Position = UDim2.new(0.293, 0, -0.021, 0)
+	InTabContainer.Size = UDim2.new(0.692, 0, 1.021, 0)
 	
-
+	UICorner_5.CornerRadius = UDim.new(0.0500000007, 0)
+	UICorner_5.Parent = InTabContainer
 	
 
 	function Tabs:CreateTab(p)
@@ -298,6 +296,8 @@ function Library:CrateWindow(p)
 		ImageLabel_2.ImageRectSize = gl(Icon).ImageRectSize
 		ImageLabel_2.ImageRectOffset = gl(Icon).ImageRectPosition
 
+
+
 		click(TabFrame)
 		
 		
@@ -316,18 +316,8 @@ function Library:CrateWindow(p)
 			local UICorner_6 = Instance.new("UICorner")
 			local UIStroke = Instance.new("UIStroke")
 			
-			InTabContainer.Name = "InTabContainer"
-			InTabContainer.Parent = Container
-			InTabContainer.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
-			InTabContainer.BackgroundTransparency = 0.300
-			InTabContainer.BorderColor3 = Color3.fromRGB(0, 0, 0)
-			InTabContainer.BorderSizePixel = 0
-			InTabContainer.Position = UDim2.new(0.293, 0, -0.021, 0)
-			InTabContainer.Size = UDim2.new(0.692, 0, 1.021, 0)
-
-			UICorner_5.CornerRadius = UDim.new(0.0500000007, 0)
-			UICorner_5.Parent = InTabContainer
-
+			UIStroke.Parent = ButtonFrame
+			
 			ScrollingFrame_2.Parent = InTabContainer
 			ScrollingFrame_2.Active = true
 			ScrollingFrame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -473,3 +463,6 @@ function Library:CrateWindow(p)
 end
 
 return Library
+
+
+-------------------------------------------
