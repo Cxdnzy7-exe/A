@@ -59,7 +59,7 @@ end
 
 function changecanvas(ScrollingFrame, UIListLayout, Plus)
 	UIListLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
-		ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, UIListLayout.AbsoluteContentSize.Y + Plus or 5)
+		ScrollingFrame.CanvasSize = UDim2.fromOffset(0,UIListLayout.AbsoluteContentSize.Y + Plus or 5)
 	end)
 end
 
@@ -303,7 +303,7 @@ function Library:CrateWindow(p)
 		ImageLabel_2.ImageRectSize = gl(Icon).ImageRectSize
 		ImageLabel_2.ImageRectOffset = gl(Icon).ImageRectPosition
 
-		changecanvas(ScrollingFrame, UIListLayout, 1)
+		changecanvas(ScrollingFrame, UIListLayout, 5)
 
 		--click(TabFrame)
 		
@@ -383,7 +383,7 @@ function Library:CrateWindow(p)
 			
 			--click(ButtonFrame)
 			
-			changecanvas(ScrollingFrame_2, UIListLayout_2, 1)
+			changecanvas(ScrollingFrame_2, UIListLayout_2, 5)
 			
 		end
 		
