@@ -387,7 +387,6 @@ function Library:CrateWindow(p)
 			local UICorner_7 = Instance.new("UICorner")
 			local Button_2 = Instance.new("Frame")
 			local UICorner_8 = Instance.new("UICorner")
-			local Button_3 = Instance.new("TextButton")
 			
 			ToggleFrame.Name = "ToggleFrame"
 			ToggleFrame.Parent = ScrollingFrame_2
@@ -396,7 +395,7 @@ function Library:CrateWindow(p)
 			ToggleFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			ToggleFrame.BorderSizePixel = 0
 			ToggleFrame.Position = UDim2.new(0.00808818452, 0, 0.064809002, 0)
-			ToggleFrame.Size = UDim2.new(0.9, 0, 0, 0.05, 0, 0)
+			ToggleFrame.Size = UDim2.new(0.899999976, 0, 0.0649999976, 0)
 
 			ToggleTitle.Name = "ToggleTitle"
 			ToggleTitle.Parent = ToggleFrame
@@ -426,8 +425,8 @@ function Library:CrateWindow(p)
 			BG.BackgroundColor3 = Color3.fromRGB(62, 62, 62)
 			BG.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			BG.BorderSizePixel = 0
-			BG.Position = UDim2.new(0.269, 0, 0.19, 0)
-			BG.Size = UDim2.new(0.509, 0, 0, 0.565, 0)
+			BG.Position = UDim2.new(0.268518269, 0, 0.190352678, 0)
+			BG.Size = UDim2.new(0.509259284, 0, 0.565313339, 0)
 
 			UICorner_7.CornerRadius = UDim.new(1, 0)
 			UICorner_7.Parent = BG
@@ -437,24 +436,12 @@ function Library:CrateWindow(p)
 			Button_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Button_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Button_2.BorderSizePixel = 0
-			Button_2.Position = UDim2.new(0.264, 0, 0.163, 0)
-			Button_2.Size = UDim2.new(0.25, 0, 0.647, 0)
+			Button_2.Position = UDim2.new(0.264403403, 0, 0.163362116, 0)
+			Button_2.Size = UDim2.new(0.25, 0, 0.646817327, 0)
 
 			UICorner_8.CornerRadius = UDim.new(1, 0)
 			UICorner_8.Parent = Button_2
 
-			Button_3.Name = "Button"
-			Button_3.Parent = ToggleFrame
-			Button_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-			Button_3.BackgroundTransparency = 1.000
-			Button_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-			Button_3.BorderSizePixel = 0
-			Button_3.Size = UDim2.new(1, 0, 1, 0)
-			Button_3.ZIndex = 2
-			Button_3.Font = Enum.Font.SourceSans
-			Button_3.Text = ""
-			Button_3.TextColor3 = Color3.fromRGB(0, 0, 0)
-			Button_3.TextSize = 14.000
 		end
 		
 		return Func
@@ -464,3 +451,6 @@ function Library:CrateWindow(p)
 end
 
 return Library
+
+
+---------
