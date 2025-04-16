@@ -57,6 +57,13 @@ function click(p)
 end
 
 
+function changecanvas(ScrollingFrame, UIListLayout, Plus)
+	UIListLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+		ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, UIListLayout.AbsoluteContentSize.Y + Plus or 5)
+	end)
+end
+
+
 function Library:CrateWindow(p)
 	local Logo = p.Logo or nil
 	local Title = p.Title or "Null"
@@ -296,7 +303,7 @@ function Library:CrateWindow(p)
 		ImageLabel_2.ImageRectSize = gl(Icon).ImageRectSize
 		ImageLabel_2.ImageRectOffset = gl(Icon).ImageRectPosition
 
-
+		changecanvas(ScrollingFrame, UIListLayout, 5)
 
 		--click(TabFrame)
 		
@@ -318,6 +325,7 @@ function Library:CrateWindow(p)
 			
 			UIStroke.Parent = ButtonFrame
 			UIStroke.Thickness = 1
+			UIStroke.Color = Color3.new(255, 255, 255)
 			
 			ScrollingFrame_2.Parent = InTabContainer
 			ScrollingFrame_2.Active = true
@@ -343,7 +351,7 @@ function Library:CrateWindow(p)
 			ButtonFrame.Position = UDim2.new(0.0367647074, 0, 0.115582973, 0)
 			ButtonFrame.Size = UDim2.new(0.9, 0, 0.05, 0, 0)
 
-			ButtonTitle.Name = Title
+			ButtonTitle.Name = "Title"
 			ButtonTitle.Parent = ButtonFrame
 			ButtonTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			ButtonTitle.BackgroundTransparency = 1.000
@@ -352,7 +360,7 @@ function Library:CrateWindow(p)
 			ButtonTitle.Position = UDim2.new(0.0500000007, 0, 0, 0)
 			ButtonTitle.Size = UDim2.new(0.632352948, 0, 1, 0)
 			ButtonTitle.Font = Enum.Font.SourceSans
-			ButtonTitle.Text = "Teleport"
+			ButtonTitle.Text = Title
 			ButtonTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 			ButtonTitle.TextSize = 20.000
 			ButtonTitle.TextWrapped = true
@@ -374,6 +382,9 @@ function Library:CrateWindow(p)
 			UICorner_6.Parent = ButtonFrame
 			
 			--click(ButtonFrame)
+			
+			changecanvas(ScrollingFrame_2, UIListLayout_2, 5)
+			
 		end
 		
 		function Func:CreateToggle(p)
@@ -451,6 +462,3 @@ function Library:CrateWindow(p)
 end
 
 return Library
-
-
----------
