@@ -82,9 +82,6 @@ function Library:CreateWindow(p)
 
 	-----------[[ // Body \\ ]]----------
 	local Body = Instance.new("Frame")
-	
-	
-
 
 	local Tabs = {
 		Value = false,
@@ -140,7 +137,7 @@ function Library:CreateWindow(p)
 	Logo.Position = UDim2.new(0, 6, 0, 0)
 	Logo.Size = UDim2.new(0, 47, 0, 47)
 	Logo.SizeConstraint = Enum.SizeConstraint.RelativeXX
-	Logo.Image = Logo
+	Logo.Image = "rbxassetid://90238093188663"
 
 	TitleContainer.Name = "TitleContainer"
 	TitleContainer.Parent = Header
@@ -914,3 +911,5 @@ TextBox_2.Font = Enum.Font.SourceSans
 TextBox_2.Text = "......"
 TextBox_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextBox_2.TextSize = 14.000]]
+
+----------------
